@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        body{
+            background-image: url("https://i.pinimg.com/originals/9b/1c/db/9b1cdba2bbc23eae72cfb416c4c7e5f0.gif");
+            background-size: cover;
+        }
+        #a{
+            height: 90px;
+            width: 90px;
+            background-color: rgb(86, 159, 161);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border:3px solid rgb(8, 255, 255);
+        }
+        #a:hover{
+            background-color: rgb(216, 105, 216);
+            border:5px double darkslateblue;
+            box-shadow: 3px 3px 3px deeppink;
+        }
+       
+        #b{
+            height: 90px;
+            width: 90px;
+            background-color: rgb(116, 118, 236);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border:3px solid rgb(8, 123, 255);
+        }
+        #b:hover{
+            background-color: rgb(194, 216, 105);
+            border:5px double rgb(97, 252, 0);
+            box-shadow: 3px 3px 3px rgb(217, 255, 0);
+        }
+               
+        #c{
+            height: 90px;
+            width: 90px;
+            background-color: rgb(144, 116, 236);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border:3px solid rgb(8, 185, 255);
+        }
+        #c:hover{
+            background-color: rgb(216, 105, 105);
+            border:5px double rgb(252, 0, 0);
+        }
+        #inp{
+            height: 50px;
+            width: 350px;
+            background-color: deepskyblue;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div class="1"></div>
+    <input type="text" placeholder="0" id="inp">
+    <table>
+        <tr>
+            <td>
+                <input type="button" value="7" id="a" onclick="takeInput(7)" id="a">
+            </td>
+            <td>
+                <input type="button" value="8" id="a" onclick="takeInput(8)"id="a">
+            </td>
+            <td>
+                <input type="button" value="9" id="a" onclick="takeInput(9)"id="a">
+            </td>
+            <td>
+                <input type="button" value="/" id="b" onclick="takeInput('/')" id="b">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="4" id="a" onclick="takeInput(4)"id="a">
+            </td>
+            <td>
+                <input type="button" value="5" id="a" onclick="takeInput(5)"id="a">
+            </td>
+            <td>
+                <input type="button" value="6" id="a" onclick="takeInput(6)"id="a">
+            <td>
+                <input type="button" value="x" id="b" onclick="takeInput('*')"id="b" >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="1" id="a" onclick="takeInput(1)"id="a">
+            </td>
+            <td>
+                <input type="button" value="2" id="a" onclick="takeInput(2)"id="a">
+            </td>
+            <td>
+                <input type="button" value="3" id="a" onclick="takeInput(3)"id="a">
+            </td>
+            <td>
+                <input type="button" value="-" id="b" onclick="takeInput('-')"id="b">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="C" id="c" onclick="clearInput()" id="c">
+            </td>
+            <td>
+                <input type="button" value="0" id="a" onclick="takeInput(0)"id="a">
+            </td>
+            <td>
+                <input type="button" value="=" onclick="finalValue()"id="c">
+            </td>
+            <td>
+                <input type="button" value="+" id="b" onclick="takeInput('+')"id="b">
+            </td>
+        </tr>
+    </table>
+    <script>
+       function takeInput(x){
+        document.getElementById("inp").value = document.getElementById("inp").value + x
+       }
+       function clearInput(){
+           document.getElementById("inp").value = ""
+        }
+        function finalValue(){
+            var exp = document.getElementById("inp").value
+            var answer = eval(exp)
+            document.getElementById("inp").value = answer
+        }
+    </script>
+</body>
+</html>
